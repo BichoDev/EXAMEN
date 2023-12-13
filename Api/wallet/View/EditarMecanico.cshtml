@@ -1,0 +1,36 @@
+@model Mecanicos
+
+<h2>Editar Mecánico</h2>
+<form asp-action="Editar" asp-controller="Mecanicos">
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Nombre" />
+    </div>
+    <div>
+        <label>Edad:</label>
+        <input asp-for="Edad" />
+    </div>
+    <div>
+        <label>Domicilio:</label>
+        <input asp-for="Domicilio" />
+    </div>
+    <div>
+        <label>Título:</label>
+        <input asp-for="Titulo" />
+    </div>
+    <div>
+        <label>Especialidad:</label>
+        <input asp-for="Especialidad" />
+    </div>
+    <div>
+        <label>Sueldo Base:</label>
+        <input asp-for="SueldoBase" />
+    </div>
+    <div>
+        <label>Gratificación Título:</label>
+        <input asp-for="GratTitulo" />
+    </div>
+
+    <button type="submit">Editar</button>
+    <a asp-action="Index" asp-controller="Mecanicos">Volver</a>
+</form>

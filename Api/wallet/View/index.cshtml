@@ -1,0 +1,41 @@
+@model List<Mecanicos>
+
+<h2>Mecánicos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Domicilio</th>
+            <th>Título</th>
+            <th>Especialidad</th>
+            <th>Sueldo Base</th>
+            <th>Gratificación Título</th>
+            <th>Sueldo Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mecanico in Model)
+        {
+            <tr>
+                <td>@mecanico.IdMecanico</td>
+                <td>@mecanico.Nombre</td>
+                <td>@mecanico.Edad</td>
+                <td>@mecanico.Domicilio</td>
+                <td>@mecanico.Titulo</td>
+                <td>@mecanico.Especialidad</td>
+                <td>@mecanico.SueldoBase</td>
+                <td>@mecanico.GratTitulo</td>
+                <td>@mecanico.SueldoTotal</td>
+                <td>
+                    <a asp-action="Editar" asp-controller="Mecanicos" asp-route-id="@mecanico.IdMecanico">Editar</a> |
+                    <a asp-action="Eliminar" asp-controller="Mecanicos" asp-route-id="@mecanico.IdMecanico">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Crear" asp-controller="Mecanicos">Crear Nuevo</a>
